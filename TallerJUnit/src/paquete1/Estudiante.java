@@ -1,17 +1,33 @@
 
 package paquete1;
 
-public class Estudiante {
-    // 1.  Declarar
-    // se declaran datos o atributos con visibilidad protegido
-    // # nombresEstudiante: Cadena
-    protected String nombresEstudiante;
-    // # apellidosEstudiante: Cadena
-    protected String apellidosEstudiante;
-    // # identificacionEstudiante: Cadena
-    protected String identificacionEstudiante;
-    // # edadEstudiante: Entero
+public class Estudiante {    
+    protected String nombresEstudiante;    
+    protected String apellidosEstudiante;  
+    protected String identificacionEstudiante;   
     protected int edadEstudiante;
     
-
+    public void establecerNombresEstudiante(String x){
+        nombresEstudiante = x;    
+    }
+    
+    public String obtenerNombresEstudiante(){
+        return nombresEstudiante;    
+    }
+    
+    public void establecerApellidoEstudiante(String x){
+        apellidosEstudiante = x;    
+    }
+    
+    public String obtenerApellidoEstudiante(){
+        return apellidosEstudiante;    
+    }
+    
+    public void establecerIdentificacionEstudiante(String x){
+        identificacionEstudiante = x;    
+    }
+    
+    public String obtenerIdentificacionEstudiante(){
+        return identificacionEstudiante;    
+    }
 }

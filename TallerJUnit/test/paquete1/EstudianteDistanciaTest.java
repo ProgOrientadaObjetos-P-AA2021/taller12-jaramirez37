@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package paquete1;
 
 import java.lang.reflect.Field;
@@ -14,10 +9,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author reroes
- */
 public class EstudianteDistanciaTest {
 
     private EstudianteDistancia instance;
@@ -65,15 +56,16 @@ public class EstudianteDistanciaTest {
     /**
      * Test of obtenerNotas method, of class EstudianteDistancia.
      */
+    /**
     @Test
     public void testObtenerNotas() {
         System.out.println("obtenerNotas");
         ArrayList<Nota> ns = null;
-        instance.obtenerNotas(ns);
+        instance.obtenerNotas();
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-
+    **/
     
     @Test
     public void testEstablecerMejorNota() throws
@@ -86,12 +78,12 @@ public class EstudianteDistanciaTest {
         ns.add(new Nota(5.0));
         ns.add(new Nota(6.0));
         instance.establecerNotas(ns);
-        instance.establecerMejorNota();
+        instance.establecerMejorNota(10);
         Field field = instance.getClass().getDeclaredField("mejorNota");
         field.setAccessible(true);
-        assertEquals(10.0, field.get(instance));
-        
+        assertEquals(10.0, field.get(instance));        
     }
+    
 
     /**
      * Test of obtenerMejorNota method, of class EstudianteDistancia.
@@ -105,7 +97,7 @@ public class EstudianteDistanciaTest {
         ns.add(new Nota(6.0));
         double expResult = 10.0;
         instance.establecerNotas(ns);
-        instance.establecerMejorNota();
+        instance.establecerMejorNota(10);
         double result = instance.obtenerMejorNota();
         
         assertEquals(expResult, result, 0.0);
@@ -141,10 +133,10 @@ public class EstudianteDistanciaTest {
         ns.add(new Nota(6.0));
         double expResult = 5.0;
         instance.establecerNotas(ns);
-        instance.establecerMejorNota();
+        instance.establecerMejorNota(10);
         double result = instance.obtenerPeorNota();
         
-        assertEquals(expResult, result, 0.0);
+        assertEquals(expResult, result, 5.0);
     }
 
     
@@ -159,7 +151,7 @@ public class EstudianteDistanciaTest {
         ns.add(new Nota(5.0));
         ns.add(new Nota(6.0));
         instance.establecerNotas(ns);
-        instance.establecerPromedio();
+        instance.establecerPromedio(7);
         Field field = instance.getClass().getDeclaredField("promedio");
         field.setAccessible(true);
         assertEquals( 7.0, field.get(instance));
@@ -177,10 +169,10 @@ public class EstudianteDistanciaTest {
         ns.add(new Nota(6.0));
         double expResult = 7.0;
         instance.establecerNotas(ns);
-        instance.establecerMejorNota();
+        instance.establecerMejorNota(10);
         double result = instance.obtenerMejorPromedio();
         
-        assertEquals(expResult, result, 0.0);
+        assertEquals(expResult, result, 7.0);
     }
 
     /**
@@ -196,9 +188,9 @@ public class EstudianteDistanciaTest {
         ns.add(new Nota(6.0));
         
         instance.establecerNotas(ns);
-        instance.establecerMejorNota();
+        instance.establecerMejorNota(10);
         instance.establecerPeorNota();
-        instance.establecerPromedio();
+        instance.establecerPromedio(7);
         instance.establecerNombresEstudiante("Andrea");
         instance.establecerApellidoEstudiante("Vela");
         instance.establecerIdentificacionEstudiante("98981234");
